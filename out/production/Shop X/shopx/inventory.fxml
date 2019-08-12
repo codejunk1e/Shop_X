@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+       <TableView prefHeight="431.0" prefWidth="633.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <columns>
+               <TableColumn minWidth="38.0" prefWidth="38.0" resizable="true" text="S/N" />
+               <TableColumn minWidth="55.0" prefWidth="55.0" resizable="true" text="Code" />
+               <TableColumn minWidth="200.0" prefWidth="300.0" resizable="true" text="Description" />
+               <TableColumn minWidth="200.0" prefWidth="100.0" resizable="true" text="Available stock" />
+               <TableColumn minWidth="100.0" prefWidth="73.0" resizable="true" text="Price" />
+               <TableColumn minWidth="200.0" prefWidth="134.0" resizable="true" text="Expiry Date" />
+           </columns>
+       </TableView>
+   </children>
+</AnchorPane>

@@ -36,13 +36,22 @@ public class Controller {
     private Tab settingsTab;
 
     @FXML
+    private Tab AboutTab;
+
+    @FXML
+    private Tab sales;
+
+    @FXML
     private AnchorPane settingsContainer;
 
     @FXML
-    private Tab logoutTab;
+    private AnchorPane AboutContainer;
+
+    @FXML
+    private AnchorPane salesContainer;
 
 
-    private double tabWidth = 90.0;
+    private double tabWidth = 120;
     public static int lastSelectedTabIndex = 0;
 
     /// Life cycle
@@ -83,24 +92,24 @@ public class Controller {
             }
         };
 
-        configureTab(userProfileTab, "User\nProfile", "/shopx/resources/images/user-profile.png", userProfileContainer, getClass().getResource("userprofile.fxml"), replaceBackgroundColorHandler);
-        configureTab(settingsTab, "Settings", "/shopx/resources/images/settings.png", settingsContainer, getClass().getResource("settings.fxml"), replaceBackgroundColorHandler);
-        configureTab(logoutTab, "Logout", "/shopx/resources/images/logout.png", null, null, logoutHandler);
+        configureTab(userProfileTab, "Inventory", "/shopx/resources/images/ic_shopping_cart_black_36dp.png", userProfileContainer, getClass().getResource("inventory.fxml"), replaceBackgroundColorHandler);
+        configureTab(sales, "Sales", "/shopx/resources/images/ic_attach_money_36pt.png", salesContainer, getClass().getResource("sales.fxml"), replaceBackgroundColorHandler  );
+        configureTab(settingsTab, "Settings", "/shopx/resources/images/ic_settings_black_36dp.png", settingsContainer, getClass().getResource("settings.fxml"), replaceBackgroundColorHandler);
+        configureTab(AboutTab, "About", "/shopx/resources/images/ic_question_answer_36pt.png", AboutContainer, getClass().getResource("About.fxml"), replaceBackgroundColorHandler);
 
         userProfileTab.setStyle("-fx-background-color: -fx-focus-color;");
     }
 
     private void configureTab(Tab tab, String title, String iconPath, AnchorPane containerPane, URL resourceURL, EventHandler<Event> onSelectionChangedEvent) {
-        double imageWidth = 40.0;
+        double imageWidth = 36;
 
         ImageView imageView = new ImageView(new Image(iconPath));
         imageView.setFitHeight(imageWidth);
         imageView.setFitWidth(imageWidth);
 
         Label label = new Label(title);
-        label.setMaxWidth(tabWidth - 20);
         label.setPadding(new Insets(5, 0, 0, 0));
-        label.setStyle("-fx-text-fill: black; -fx-font-size: 8pt; -fx-font-weight: normal;");
+        label.setStyle("-fx-text-fill: black; -fx-font-weight: normal;");
         label.setTextAlignment(TextAlignment.CENTER);
 
         BorderPane tabPane = new BorderPane();
