@@ -13,7 +13,9 @@
     -jfx-light-secondary-color: -fx-focus-color;
     -jfx-dark-secondary-color: -fx-focus-color;
 }
-
+#my-table .table-column {
+  -fx-alignment: CENTER;
+}
 /*******************************************************************************
  *                                                                             *
  * JFX Tab Pane                                                                *

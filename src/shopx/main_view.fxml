@@ -15,6 +15,16 @@
                <content>
                   <AnchorPane fx:id="userProfileContainer" minHeight="0.0" minWidth="0.0" prefHeight="431.0" prefWidth="612.0">
                      <children>
+                         <TableView prefHeight="431.0" prefWidth="633.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" fx:id="taskstable" id="my-table">
+                             <columns>
+                                 <TableColumn minWidth="38.0" prefWidth="38.0" resizable="true" text="S/N" fx:id="sncolumn" />
+                                 <TableColumn minWidth="55.0" prefWidth="55.0" resizable="true" text="Code" fx:id="codecolumn" />
+                                 <TableColumn minWidth="200.0" prefWidth="300.0" resizable="true" text="Description" fx:id="descriptioncolumn" />
+                                 <TableColumn minWidth="200.0" prefWidth="100.0" resizable="true" text="Available stock" fx:id="availableStockColumn"/>
+                                 <TableColumn minWidth="100.0" prefWidth="73.0" resizable="true" text="Price" fx:id="priceColumn"/>
+                                 <TableColumn minWidth="200.0" prefWidth="134.0" resizable="true" text="Expiry Date" fx:id="expiryDateColumn" />
+                             </columns>
+                         </TableView>
                      </children>
                   </AnchorPane>
                </content>

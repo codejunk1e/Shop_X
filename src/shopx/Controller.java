@@ -2,6 +2,8 @@ package shopx;
 
 import com.jfoenix.controls.JFXTabPane;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -12,6 +14,9 @@ import javafx.geometry.Side;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -23,8 +28,43 @@ import java.net.URL;
 
 public class Controller {
 
+    private final  DList dList = new DList();
+    private final ObservableList<DList> lister =
+            FXCollections.observableArrayList(
+                    new DList(1, 1, "Cheese Burger", 20, "$40", "10-29-1029"),
+                    new DList(2, 10, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(3, 11, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(4, 100, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(5, 101, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(6, 110, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029"),
+                    new DList(7, 111, "Burger", 20, "$40", "10-29-1029")
+            );
     @FXML
     private JFXTabPane tabContainer;
+
+    @FXML
+    private TableView <DList> taskstable;
 
     @FXML
     private Tab userProfileTab;
@@ -50,6 +90,24 @@ public class Controller {
     @FXML
     private AnchorPane salesContainer;
 
+    @FXML
+    private TableColumn<DList, Integer> sncolumn;
+
+    @FXML
+    private TableColumn<DList, Integer> codecolumn;
+
+    @FXML
+    private TableColumn<DList, String> descriptioncolumn;
+
+    @FXML
+    private TableColumn<DList, Integer> availableStockColumn;
+
+    @FXML
+    private TableColumn<DList, String> priceColumn;
+
+    @FXML
+    private TableColumn <DList, String>expiryDateColumn;
+
 
     private double tabWidth = 120;
     public static int lastSelectedTabIndex = 0;
@@ -59,6 +117,21 @@ public class Controller {
     @FXML
     public void initialize() {
         configureView();
+
+        sncolumn.setCellValueFactory(
+                new PropertyValueFactory<DList, Integer>("sn"));
+        codecolumn.setCellValueFactory(
+                new PropertyValueFactory<DList, Integer>("code"));
+        descriptioncolumn.setCellValueFactory(
+                new PropertyValueFactory<DList, String>("Description"));
+        availableStockColumn.setCellValueFactory(
+                new PropertyValueFactory<DList, Integer>("availableStock"));
+        priceColumn.setCellValueFactory(
+                new PropertyValueFactory<DList, String>("price"));
+        expiryDateColumn.setCellValueFactory(
+                new PropertyValueFactory<DList, String>("expiryDate"));
+
+        taskstable.setItems(lister);
     }
 
     /// Private
